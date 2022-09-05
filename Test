@@ -1,0 +1,43 @@
+public void Test{
+
+public class Test {public static void main(String[]args){
+
+System.setProperty("webdriver.chrome.driver"," path of the chrome");
+
+WebDriver driver = new ChromeDriver();
+
+driver.get("https://kyro.pages.dev/");
+
+driver.manage().window().maximize();
+
+WebElement dashborad = driver.findElement(By.xpath("(//*[text()=\"Dashboard\"])[1]"));
+
+dashborad.click();
+
+
+driver.findElement(By.xpath("(//*[text()='New Project'])[1]")).click();
+try
+{
+	
+
+WebElement date = driver.findElement(By.name("startdate"));
+date.click();
+
+Date d = new Date(1);
+
+SimpleDateFormat formatter = new SimpleDateFormat("dd-MMMM-yyyy");
+String date1 = formatter.format(d);
+
+String splitter[] = date1.split("-");
+String Month = splitter[1];
+
+String day = splitter[0];
+
+System.out.print(Month);
+System.out.print(day);
+
+
+
+}}
+}
+
